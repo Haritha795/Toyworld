@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/pets.css' %}">
+<h3 style="color:darkred;">{{info}}</h3>
+<main class="page-content">
+  {% for m in cart %}
+  <div class="card"style="background-image:url({{m.product.timg.url}});">
+    <div class="content">
+      <h2 class="title">{{m.product.tname}}</h2>
+      <h3>Price:{{m.product.tprc}}₹</h3> 
+      <h3>Quantity: {{m.qty}}</h3> 
+      <p class="copy">{{m.product.desc}}</p>
+      <button><a href="{% url 'cartdelete' m.id %}">Remove</a></button>
+      </div>
+    </div>
+    {% endfor %}
+</main>
+<div>
+    <h4 style="color:purple">Total Price:{{total}}</h4>
+</div>

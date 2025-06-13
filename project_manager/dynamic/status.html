@@ -1,0 +1,57 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/status.css' %}">
+<html>
+<head>
+<title>Project Status Report</title>
+
+</head>
+ 
+<body>
+<h3>PROJECT STATUS REPORTS</h3>
+
+ 
+<table align="center" width="50px;" height="30px;"  cellpadding = "40">
+    <form class="requires-validation" method="post" novalidate>
+                        {% csrf_token %}
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>Project Name</td>
+<td><input name="pnm" type="text" name="First_Name" maxlength="50"/>
+</td>
+</tr>
+<tr>
+<td>Report Date</td>
+<td><input name="rd" type="date" name="Last_Name" maxlength="30"/>
+</td>
+</tr>
+
+<tr>
+<td>Status Summary</td>
+<td><input name="ss" type="text" name="Last_Name" maxlength="30"/>
+</td>
+</tr>
+<tr>
+<td>Issues</td>
+<td><input name="is" type="text" name="Last_Name" maxlength="30"/>
+</td>
+</tr>
+<tr>
+<td>Update Date</td>
+<td><input name="ud" type="date" name="Last_Name" maxlength="30"/>
+</td>
+</tr>
+ 
+
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="3" align="center">
+<input type="submit" value="Submit">
+</td>
+</tr>
+</table>
+ 
+</form>
+ 
+</body>
+</html>

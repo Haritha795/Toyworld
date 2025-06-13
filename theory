@@ -1,0 +1,67 @@
+                        DJANGO
+
+* A framework is a basic structure or set of rules that provides a foundation for building something, 
+             like a software   application or a project
+* django is framework of python
+* MVT= model, views, Template
+* ORM= object relational mapping(used to connect object-oriented code with a relational database.)
+To create project
+* django-admin startproject toyshop(toyshop is project name)
+To create app
+* django-admin startapp toyapp(toyapp is app name)
+To run project
+* python manage.py runserver
+* create dynamic and static files in toyshop
+
+       in Settings file
+* installed app
+   'toyapp',
+* In settings templates
+   'DIRS': [os.path.join(BASE_DIR,'dynamic')],
+* from pathlib import Path
+   import os
+* STATIC_URL = 'static/'
+    STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+
+* create file index.html in dynamic folder
+
+* in Views file
+ # Create your views here.
+def index(request):
+    return render(request,"index.html")
+* create urls file in toyapp and copy paste urls.py code in new urls file
+   from django.urls import path
+   from.import views
+
+  urlpatterns = [
+    path('',views.index),
+]  
+
+* in original urls file
+from django.contrib import admin
+from django.urls import path,include
+
+urlpatterns = [
+    path('admin/', admin.site.url
+    path('',include('toyapp.urls'))
+]
+* create new file urls.py in toyapp folder
+  from django.urls import path
+from.import views
+
+urlpatterns = [
+    path('',views.index),
+]
+*type  {% load  static %} in index.html,
+        <link rel="stylesheet" href="{% static 'css/reg.css' %}">,
+        <form class="requires-validation" method="post" novalidate>
+                        {% csrf_token %}
+
+* create table in models
+  do migrations
+  
+
+
+
+
+

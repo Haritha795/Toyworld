@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/users.css' %}">
+<h2>Registered Users</h2>
+ <form method="post">
+ {% csrf_token %}
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Full Name</h1></th>
+			<th><h1>Mobile Number</h1></th>
+			<th><h1>Email</h1></th>
+			<th><h1>Password</h1></th>
+            <th><h1>Update</h1></th>
+		</tr>
+		</thead>
+		</thead>
+		</thead>
+	</thead>
+   
+	<tbody>
+        {% for m in user %}
+		<tr>
+            <td>
+                <input type="text"value="{{m.fnm}}" name="nm">
+                <input type="text"value="{{m.id}}" name="idl" hidden>
+
+            </td>
+			
+			<td><input type="number"value="{{m.mob}}" name="mb"></td>
+			<td><input type="email"value="{{m.eml}}" name="em"></td>
+			<td><input type="text"value="{{m.psw}}" name="ps"></td>
+            <td><button>Update</button></td>
+
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</form>

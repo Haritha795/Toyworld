@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+    <div id="form-main">
+  <div id="form-div">
+    
+      <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 style="color: rgb(43, 226, 104)">{{msg}}</h2>
+		
+      <p class="name">
+        <input name="tn" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Toy Name" id="name" />
+      </p>
+      
+      <p class="email">
+        <input name="ti" type="file" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Toy Image" />
+      </p>
+       <p class="email">
+        <input name="tp" type="number" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Toy Price" />
+      </p>
+       <p class="email">
+        <input name="ds" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Description" />
+      </p>
+      
+     
+      
+      <div class="submit">
+        <input type="submit" value="Submit" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>

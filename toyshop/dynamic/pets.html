@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/pets.css' %}">
+{% if messages %}
+{% for msg in messages %}
+<h2 style="color:blueviolet;font-size:20px;">{{msg}}</h2>
+{% endfor %}
+{% endif %}
+<main class="page-content">
+  {% for m in pets %}
+  <div class="card"style="background-image:url({{m.timg.url}});">
+    <div class="content">
+      <h2 class="title">{{m.tname}}</h2>
+      <h3>{{m.tprc}}₹</h3> 
+      <p class="copy">{{m.desc}}</p>
+      <button class="btn"><a href="{% url 'cart' m.id %}">Cart</a></button>
+      </div>
+    </div>
+    {% endfor %}
+</main>
